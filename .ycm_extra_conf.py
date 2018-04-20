@@ -22,17 +22,64 @@ BASE_FLAGS = [
         '/home/lbertag/.vim'
 ]
 
+TRILINOS_INCLUDE_FLAGS = [
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/Cuda',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/generated_specializations_hpp',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/gtest',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/impl',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/OpenMP',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/Qthread',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_expreval',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_io',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_math',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_mesh',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_search',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_search',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_simd',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_simd_view',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_topology',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_transfer',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_unit_test_utils',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_util',
+        '-isystem',
+        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/Threads',
+]
+
 HOMME_FLAGS = [
         '-DHAVE_CONFIG_H',
+        '-D__AVX__',
         '-I/storage/workdir/hommexx/hommexx-src/components/homme/src/',
         '-I/storage/workdir/hommexx/hommexx-src/components/homme/src/share/cxx/',
+        '-I/storage/workdir/hommexx/hommexx-src/components/homme/src/share/cxx/mpi',
+        '-I/storage/workdir/hommexx/hommexx-src/components/homme/src/share/cxx/vector/',
         '-I/storage/workdir/hommexx/hommexx-src/components/homme/test/unit_tests/',
         '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/src/',
+        '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/share_ut/',
         '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/preqx_flat_ut/',
         '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/prtcA_flat/',
         '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/prtcA_flat_c/',
-        '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-opt-gcc/include/',
+        '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/prtcB_flat/',
+        '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/prtcB_flat_c/',
 ]
 
 KOKKOS_FLAGS = [
@@ -47,11 +94,33 @@ KOKKOS_FLAGS = [
         '-I/storage/workdir/kokkos/kokkos-src/algorithms/src',
 ]
 
+ALBANY_FLAGS = [
+        '-I/storage/workdir/albany/albany-src/src/',
+        '-I/storage/workdir/albany/albany-src/src/adapt',
+        '-I/storage/workdir/albany/albany-src/src/disc',
+        '-I/storage/workdir/albany/albany-src/src/disc/stk',
+        '-I/storage/workdir/albany/albany-src/src/disc/catalyst',
+        '-I/storage/workdir/albany/albany-src/src/disc/pumi',
+        '-I/storage/workdir/albany/albany-src/src/disc/tools',
+        '-I/storage/workdir/albany/albany-src/src/evaluators/bc',
+        '-I/storage/workdir/albany/albany-src/src/evaluators/gather',
+        '-I/storage/workdir/albany/albany-src/src/evaluators/interpolation',
+        '-I/storage/workdir/albany/albany-src/src/evaluators/pde',
+        '-I/storage/workdir/albany/albany-src/src/evaluators/response',
+        '-I/storage/workdir/albany/albany-src/src/evaluators/scatter',
+        '-I/storage/workdir/albany/albany-src/src/evaluators/state',
+        '-I/storage/workdir/albany/albany-src/src/evaluators/utility',
+        '-I/storage/workdir/albany/albany-src/src/problems',
+        '-I/storage/workdir/albany/albany-src/src/responses',
+        '-I/storage/workdir/albany/albany-src/src/utility',
+        '-I/storage/workdir/albany/albany-src/src/FELIX/evaluators',
+        '-I/storage/workdir/albany/albany-src/src/FELIX/problems',
+        '-I/storage/workdir/albany/albany-src/src/FELIX/interface_with_cism',
+        '-I/storage/workdir/albany/albany-src/src/FELIX/interface_with_mpas',
+]
+
 IBECS_FLAGS = [
-        '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/',
-        '-I',
-        '/storage/workdir/ibecs/ibecs-src/src/',
+        '-I/storage/workdir/ibecs/ibecs-src/src/',
         '-I/storage/workdir/ibecs/ibecs-build-debug-gcc/src',
 ]
 
@@ -70,9 +139,37 @@ TRILINOS_FLAGS = [
         '-I/storage/workdir/trilinos/trilinos-src/packages/intrepid2/core/src/Kokkos',
         '-I/storage/workdir/trilinos/trilinos-src/packages/intrepid2/core/src/Orientation',
         '-I/storage/workdir/trilinos/trilinos-src/packages/intrepid2/core/src/Shared',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos/core/src',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos/containers/src',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/abs',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/axpby',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/dot',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/fill',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/mult',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/nrm1',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/nrm2',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/nrm2w',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/nrmInf',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/recip',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/scal',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/spmv',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/sum',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/impl/generated_specializations_cpp/update',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/stage/batched',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/stage/batched/host',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/stage/blas3',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/stage/graph/',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/stage/graph/impl',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos-kernels/src/stage/graph/utils',
         '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos/algorithms/src',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos/containers/src',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos/core/src',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos/core/src/Cuda',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos/core/src/OpenMP',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos/core/src/OpenMPTarget',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos/core/src/Qthreads',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos/core/src/Threads',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/kokkos/core/src/impl',
         '-I/storage/workdir/trilinos/trilinos-src/packages/ml/src/Coarsen',
         '-I/storage/workdir/trilinos/trilinos-src/packages/ml/src/Comm',
         '-I/storage/workdir/trilinos/trilinos-src/packages/ml/src/FEGrid',
@@ -96,18 +193,17 @@ TRILINOS_FLAGS = [
         '-I/storage/workdir/trilinos/trilinos-src/packages/muelu/src/Transfers',
         '-I/storage/workdir/trilinos/trilinos-src/packages/muelu/src/Utils',
         '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-belos',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-epetra',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-lapack',
         '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-loca/src',
         '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-loca/src-epetra',
         '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-loca/src-lapack',
         '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-loca/src-mf',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-belos',
         '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-petsc',
         '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-thyra',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-epetra',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/nox/src-lapack',
         '-I/storage/workdir/trilinos/trilinos-src/packages/phalanx/src',
         '-I/storage/workdir/trilinos/trilinos-src/packages/piro/src',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/rythmos/src',
         '-I/storage/workdir/trilinos/trilinos-src/packages/rol/src/algorithm',
         '-I/storage/workdir/trilinos/trilinos-src/packages/rol/src/elementwise',
         '-I/storage/workdir/trilinos/trilinos-src/packages/rol/src/function',
@@ -117,6 +213,7 @@ TRILINOS_FLAGS = [
         '-I/storage/workdir/trilinos/trilinos-src/packages/rol/src/utils',
         '-I/storage/workdir/trilinos/trilinos-src/packages/rol/src/vector',
         '-I/storage/workdir/trilinos/trilinos-src/packages/rol/src/zoo',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/rythmos/src',
         '-I/storage/workdir/trilinos/trilinos-src/packages/sacado/Fad/Fad',
         '-I/storage/workdir/trilinos/trilinos-src/packages/sacado/Fad/TinyFad',
         '-I/storage/workdir/trilinos/trilinos-src/packages/sacado/Fad/TinyFadET',
@@ -130,32 +227,31 @@ TRILINOS_FLAGS = [
         '-I/storage/workdir/trilinos/trilinos-src/packages/stk/stk_mesh/stk_mesh/baseImpl',
         '-I/storage/workdir/trilinos/trilinos-src/packages/stk/stk_topology/stk_topology',
         '-I/storage/workdir/trilinos/trilinos-src/packages/stk/stk_util/stk_util',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/teuchos/core/src',
         '-I/storage/workdir/trilinos/trilinos-src/packages/teuchos/comm/src',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/teuchos/parameterlist/src',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/teuchos/numerics/src',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/teuchos/core/src',
         '-I/storage/workdir/trilinos/trilinos-src/packages/teuchos/kokkoscompat/src',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/operator_vector/fundamental',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/operator_vector/extended',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/operator_solve/fundamental',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/operator_solve/extended',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/nonlinear/solvers/fundamental',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/nonlinear/solvers/extended',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/nonlinear/model_evaluator/fundamental',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/support/operator_vector/client_support',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/support/operator_vector/adapter_support',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/support/operator_solve/client_support',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/support/nonlinear/solvers/client_support',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/support/nonlinear/model_evaluator/client_support',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/teuchos/numerics/src',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/teuchos/parameterlist/src',
         '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/adapters/epetra/src',
         '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/adapters/epetraext/src/model_evaluator',
         '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/adapters/epetraext/src/transformer',
         '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/adapters/tpetra/src',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/tpetra/core/src',
-        '-I/storage/workdir/trilinos/trilinos-src/packages/tpetra/core/inout',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/nonlinear/model_evaluator/fundamental',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/nonlinear/solvers/extended',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/nonlinear/solvers/fundamental',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/operator_solve/extended',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/operator_solve/fundamental',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/operator_vector/extended',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/interfaces/operator_vector/fundamental',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/support/nonlinear/model_evaluator/client_support',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/support/nonlinear/solvers/client_support',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/support/operator_solve/client_support',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/support/operator_vector/adapter_support',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/thyra/core/src/support/operator_vector/client_support',
         '-I/storage/workdir/trilinos/trilinos-src/packages/tpetra/core/ext',
-        '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/tpetra/core/inout',
+        '-I/storage/workdir/trilinos/trilinos-src/packages/tpetra/core/src',
+        '-I/storage/workdir/trilinos/trilinos-install-debug-gcc/include',
 ]
 
 def in_directory(file, directory, allow_symlink = False):
@@ -172,19 +268,23 @@ def in_directory(file, directory, allow_symlink = False):
     return os.path.commonprefix([file, directory]) == directory
 
 def FlagsForFile(filename, **kwargs):
-    final_flags = BASE_FLAGS
     is_homme = in_directory(filename,'/storage/workdir/hommexx/hommexx-src/components/homme')
-    if is_homme :
-      final_flags = final_flags + HOMME_FLAGS
     is_kokkos = in_directory(filename,'/storage/workdir/kokkos/kokkos-src')
-    if is_kokkos :
-      final_flags = final_flags + KOKKOS_FLAGS
+    is_albany = in_directory(filename,'/storage/workdir/albany/albany-src')
     is_ibecs = in_directory(filename,'/storage/workdir/ibecs/ibecs-src')
-    if is_ibecs :
-      final_flags = final_flags + IBECS_FLAGS
     is_trilinos = in_directory(filename,'/storage/workdir/trilinos/trilinos-src')
-    if is_trilinos :
-      final_flags = final_flags + TRILINOS_FLAGS
+    if is_homme :
+      final_flags = HOMME_FLAGS + TRILINOS_INCLUDE_FLAGS + BASE_FLAGS
+    elif is_kokkos :
+      final_flags = KOKKOS_FLAGS + BASE_FLAGS
+    elif is_albany :
+      final_flags = ALBANY_FLAGS + TRILINOS_INCLUDE_FLAGS + BASE_FLAGS
+    elif is_ibecs :
+      final_flags = IBECS_FLAGS + TRILINOS_INCLUDE_FLAGS + BASE_FLAGS
+    elif is_trilinos :
+      final_flags = TRILINOS_FLAGS + BASE_FLAGS
+    else:
+      final_flags = BASE_FLAGS
 
     return {
       'flags'    : final_flags,
