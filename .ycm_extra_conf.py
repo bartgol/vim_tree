@@ -24,62 +24,62 @@ BASE_FLAGS = [
 
 TRILINOS_INCLUDE_FLAGS = [
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/Cuda',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/Cuda',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/generated_specializations_hpp',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/generated_specializations_hpp',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/gtest',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/gtest',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/impl',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/impl',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/OpenMP',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/OpenMP',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/Qthread',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/Qthread',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_expreval',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_expreval',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_io',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_io',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_math',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_math',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_mesh',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_mesh',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_search',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_search',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_search',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_search',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_simd',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_simd',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_simd_view',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_simd_view',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_topology',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_topology',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_transfer',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_transfer',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_unit_test_utils',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_unit_test_utils',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/stk_util',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/stk_util',
         '-isystem',
-        '/storage/workdir/trilinos/trilinos-install-debug-gcc/include/Threads',
+        '/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/include/Threads',
 ]
 
 HOMME_FLAGS = [
         '-DHAVE_CONFIG_H',
         '-D__AVX__',
-        '-I/storage/workdir/hommexx/hommexx-src/components/homme/src/',
-        '-I/storage/workdir/hommexx/hommexx-src/components/homme/src/share/cxx/',
-        '-I/storage/workdir/hommexx/hommexx-src/components/homme/src/share/cxx/mpi',
-        '-I/storage/workdir/hommexx/hommexx-src/components/homme/src/share/cxx/vector/',
-        '-I/storage/workdir/hommexx/hommexx-src/components/homme/test/unit_tests/',
-        '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/src/',
-        '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/share_ut/',
-        '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/preqx_flat_ut/',
-        '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/prtcA_flat/',
-        '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/prtcA_flat_c/',
-        '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/prtcB_flat/',
-        '-I/storage/workdir/hommexx/hommexx-build-debug-gcc/test_execs/prtcB_flat_c/',
+        '-I/storage/workdir/hommexx/hommexx-src/branch/components/homme/src/',
+        '-I/storage/workdir/hommexx/hommexx-src/branch/components/homme/src/share/cxx/',
+        '-I/storage/workdir/hommexx/hommexx-src/branch/components/homme/src/share/cxx/mpi',
+        '-I/storage/workdir/hommexx/hommexx-src/branch/components/homme/src/share/cxx/vector/',
+        '-I/storage/workdir/hommexx/hommexx-src/branch/components/homme/test/unit_tests/',
+        '-I/storage/workdir/hommexx/hommexx-build/gcc/branch/debug/src/',
+        '-I/storage/workdir/hommexx/hommexx-build/gcc/branch/debug/test_execs/share_ut/',
+        '-I/storage/workdir/hommexx/hommexx-build/gcc/branch/debug/test_execs/preqx_flat_ut/',
+        '-I/storage/workdir/hommexx/hommexx-build/gcc/branch/debug/test_execs/prtcA_flat/',
+        '-I/storage/workdir/hommexx/hommexx-build/gcc/branch/debug/test_execs/prtcA_flat_c/',
+        '-I/storage/workdir/hommexx/hommexx-build/gcc/branch/debug/test_execs/prtcB_flat/',
+        '-I/storage/workdir/hommexx/hommexx-build/gcc/branch/debug/test_execs/prtcB_flat_c/',
 ]
 
 KOKKOS_FLAGS = [
@@ -95,28 +95,28 @@ KOKKOS_FLAGS = [
 ]
 
 ALBANY_FLAGS = [
-        '-I/storage/workdir/albany/albany-src/src/',
-        '-I/storage/workdir/albany/albany-src/src/adapt',
-        '-I/storage/workdir/albany/albany-src/src/disc',
-        '-I/storage/workdir/albany/albany-src/src/disc/stk',
-        '-I/storage/workdir/albany/albany-src/src/disc/catalyst',
-        '-I/storage/workdir/albany/albany-src/src/disc/pumi',
-        '-I/storage/workdir/albany/albany-src/src/disc/tools',
-        '-I/storage/workdir/albany/albany-src/src/evaluators/bc',
-        '-I/storage/workdir/albany/albany-src/src/evaluators/gather',
-        '-I/storage/workdir/albany/albany-src/src/evaluators/interpolation',
-        '-I/storage/workdir/albany/albany-src/src/evaluators/pde',
-        '-I/storage/workdir/albany/albany-src/src/evaluators/response',
-        '-I/storage/workdir/albany/albany-src/src/evaluators/scatter',
-        '-I/storage/workdir/albany/albany-src/src/evaluators/state',
-        '-I/storage/workdir/albany/albany-src/src/evaluators/utility',
-        '-I/storage/workdir/albany/albany-src/src/problems',
-        '-I/storage/workdir/albany/albany-src/src/responses',
-        '-I/storage/workdir/albany/albany-src/src/utility',
-        '-I/storage/workdir/albany/albany-src/src/FELIX/evaluators',
-        '-I/storage/workdir/albany/albany-src/src/FELIX/problems',
-        '-I/storage/workdir/albany/albany-src/src/FELIX/interface_with_cism',
-        '-I/storage/workdir/albany/albany-src/src/FELIX/interface_with_mpas',
+        '-I/storage/workdir/albany/albany-src/branch/src/',
+        '-I/storage/workdir/albany/albany-src/branch/src/adapt',
+        '-I/storage/workdir/albany/albany-src/branch/src/disc',
+        '-I/storage/workdir/albany/albany-src/branch/src/disc/stk',
+        '-I/storage/workdir/albany/albany-src/branch/src/disc/catalyst',
+        '-I/storage/workdir/albany/albany-src/branch/src/disc/pumi',
+        '-I/storage/workdir/albany/albany-src/branch/src/disc/tools',
+        '-I/storage/workdir/albany/albany-src/branch/src/evaluators/bc',
+        '-I/storage/workdir/albany/albany-src/branch/src/evaluators/gather',
+        '-I/storage/workdir/albany/albany-src/branch/src/evaluators/interpolation',
+        '-I/storage/workdir/albany/albany-src/branch/src/evaluators/pde',
+        '-I/storage/workdir/albany/albany-src/branch/src/evaluators/response',
+        '-I/storage/workdir/albany/albany-src/branch/src/evaluators/scatter',
+        '-I/storage/workdir/albany/albany-src/branch/src/evaluators/state',
+        '-I/storage/workdir/albany/albany-src/branch/src/evaluators/utility',
+        '-I/storage/workdir/albany/albany-src/branch/src/problems',
+        '-I/storage/workdir/albany/albany-src/branch/src/responses',
+        '-I/storage/workdir/albany/albany-src/branch/src/utility',
+        '-I/storage/workdir/albany/albany-src/branch/src/FELIX/evaluators',
+        '-I/storage/workdir/albany/albany-src/branch/src/FELIX/problems',
+        '-I/storage/workdir/albany/albany-src/branch/src/FELIX/interface_with_cism',
+        '-I/storage/workdir/albany/albany-src/branch/src/FELIX/interface_with_mpas',
 ]
 
 IBECS_FLAGS = [
@@ -268,11 +268,11 @@ def in_directory(file, directory, allow_symlink = False):
     return os.path.commonprefix([file, directory]) == directory
 
 def FlagsForFile(filename, **kwargs):
-    is_homme = in_directory(filename,'/storage/workdir/hommexx/hommexx-src/components/homme')
-    is_kokkos = in_directory(filename,'/storage/workdir/kokkos/kokkos-src')
-    is_albany = in_directory(filename,'/storage/workdir/albany/albany-src')
-    is_ibecs = in_directory(filename,'/storage/workdir/ibecs/ibecs-src')
-    is_trilinos = in_directory(filename,'/storage/workdir/trilinos/trilinos-src')
+    is_homme = in_directory(filename,'/storage/workdir/hommexx')
+    is_kokkos = in_directory(filename,'/storage/workdir/kokkos')
+    is_albany = in_directory(filename,'/storage/workdir/albany')
+    is_ibecs = in_directory(filename,'/storage/workdir/ibecs')
+    is_trilinos = in_directory(filename,'/storage/workdir/trilinos')
     if is_homme :
       final_flags = HOMME_FLAGS + TRILINOS_INCLUDE_FLAGS + BASE_FLAGS
     elif is_kokkos :
