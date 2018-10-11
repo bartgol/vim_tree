@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/storage/workdir/trilinos/trilinos-src/packages/piro'
-let g:netrw_dirhist_2='/storage/workdir/trilinos/trilinos-src/packages/piro/src'
-let g:netrw_dirhist_3='/storage/workdir/albany/albany-src/src/FELIX/evaluators'
-let g:netrw_dirhist_4='/storage/workdir/hommexx/hommexx-src/components/homme/src/share'
-let g:netrw_dirhist_5='/storage/workdir/hommexx/hommexx-src/components/homme/src'
-let g:netrw_dirhist_6='/storage/workdir/hommexx/hommexx-src/components/homme/src/share'
