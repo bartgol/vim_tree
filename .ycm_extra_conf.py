@@ -20,10 +20,18 @@ BASE_FLAGS = [
         '-isystem','/projects/sems/install/rhel7-x86_64/sems/compiler/gcc/6.1.0/base/lib/gcc/x86_64-pc-linux-gnu/6.1.0/include-fixed',
         '-isystem','/usr/include',
         '-isystem','/projects/sems/install/rhel7-x86_64/sems/compiler/gcc/7.2.0/base/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include', # for omp.h
-        '-isystem','/projects/sems/install/rhel7-x86_64/sems/compiler/gcc/7.2.0/openmpi/1.8.7/include' # for mpi
+        '-isystem','/projects/sems/install/rhel7-x86_64/sems/compiler/gcc/7.2.0/openmpi/1.8.7/include', # for mpi
 ]
 
-TRILINOS_INCLUDE_FLAGS = [
+NETCDF_FLAGS = [
+        '-isystem' ,'/projects/sems/install/rhel7-x86_64/sems/tpl/netcdf/4.4.1/gcc/7.2.0/openmpi/1.10.1/exo_parallel/include/',
+]
+
+BOOST_FLAGS = [
+        '-isystem','/projects/sems/install/rhel7-x86_64/sems/tpl/boost/1.63.0/gcc/7.2.0/base/include',
+]
+
+TRILINOS_INCLUDE_FLAGS = BOOST_FLAGS + NETCDF_FLAGS + [
         '-isystem','/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/develop/include',
         '-isystem','/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/develop/include/Cuda',
         '-isystem','/storage/workdir/trilinos/trilinos-install/groppello/gcc/debug/develop/include/generated_specializations_hpp',
@@ -237,7 +245,7 @@ IBECS_FLAGS = [
         '-I/storage/workdir/ibecs/ibecs-build-debug-gcc/src',
 ]
 
-TRILINOS_FLAGS = [
+TRILINOS_FLAGS = NETCDF_FLAGS + BOOST_FLAGS + [
         '-I/storage/workdir/trilinos/trilinos-src/branch/packages/aztecoo/src',
         '-I/storage/workdir/trilinos/trilinos-src/branch/packages/belos/src',
         '-I/storage/workdir/trilinos/trilinos-src/branch/packages/epetra/src',
@@ -335,10 +343,15 @@ TRILINOS_FLAGS = [
         '-I/storage/workdir/trilinos/trilinos-src/branch/packages/sacado/src/mpl',
         '-I/storage/workdir/trilinos/trilinos-src/branch/packages/sacado/src/parameter',
         '-I/storage/workdir/trilinos/trilinos-src/branch/packages/sacado/src/template',
-        '-I/storage/workdir/trilinos/trilinos-src/branch/packages/stk/stk_io/stk_io',
+        '-I/storage/workdir/trilinos/trilinos-src/branch/packages/seacas/libraries/ioss/src',
+        '-I/storage/workdir/trilinos/trilinos-src/branch/packages/seacas/libraries/ioss/src/exodus',
+        '-I/storage/workdir/trilinos/trilinos-src/branch/packages/seacas/libraries/ioss/src/exo_par',
+        '-I/storage/workdir/trilinos/trilinos-src/branch/packages/seacas/libraries/ioss/src/exo_fac',
+        '-I/storage/workdir/trilinos/trilinos-src/branch/packages/seacas/libraries/ioss/src/exo_fpp',
+        '-I/storage/workdir/trilinos/trilinos-src/branch/packages/stk/stk_io',
         '-I/storage/workdir/trilinos/trilinos-src/branch/packages/stk/stk_mesh',
         '-I/storage/workdir/trilinos/trilinos-src/branch/packages/stk/stk_topology',
-        '-I/storage/workdir/trilinos/trilinos-src/branch/packages/stk/stk_util/stk_util',
+        '-I/storage/workdir/trilinos/trilinos-src/branch/packages/stk/stk_util',
         '-I/storage/workdir/trilinos/trilinos-src/branch/packages/teuchos/comm/src',
         '-I/storage/workdir/trilinos/trilinos-src/branch/packages/teuchos/core/src',
         '-I/storage/workdir/trilinos/trilinos-src/branch/packages/teuchos/kokkoscompat/src',
