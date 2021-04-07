@@ -10,11 +10,11 @@ BASE_FLAGS = [
         '--pedantic',
         '-fopenmp',
         '-ferror-limit=10000',
-        '-std=c++11',
+        '-std=c++14',
         '-isystem','/home/luca/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/clang/lib/clang/10.0.0/include',
-        '-isystem','/home/luca/workdir/compilers/gcc/gcc-8.2.0-install/lib/gcc/x86_64-pc-linux-gnu/8.2.0/include',
         '-isystem','/home/luca/workdir/compilers/openmpi/openmpi-install/include', # for mpi.h
         '-isystem','/home/luca/.vim',
+        '-isystem','/home/luca/workdir/compilers/gcc/gcc-install/lib/gcc/x86_64-pc-linux-gnu/9.3.1/include', # for omp.h
         '-isystem','/home/luca/workdir/libs/boost/boost-install/include',
 ]
 
@@ -34,6 +34,15 @@ E3SM_FLAGS = [
         '-DPLEV=72',
         '-DNP=4',
         '-DQSIZE_D=4',
+        '-isystem', '/home/luca/workdir/e3sm/e3sm-src/master/externals/kokkos/core/src',
+        '-isystem', '/home/luca/workdir/e3sm/e3sm-src/master/externals/kokkos/core/src/OpenMP',
+        '-isystem', '/home/luca/workdir/e3sm/e3sm-src/master/externals/kokkos/core/src/impl',
+        '-isystem', '/home/luca/workdir/e3sm/e3sm-src/master/externals/kokkos/core/src/HIP',
+        '-isystem', '/home/luca/workdir/e3sm/e3sm-src/master/externals/kokkos/core/src/Cuda',
+        '-isystem', '/home/luca/workdir/e3sm/e3sm-src/master/externals/kokkos/core/src/Threads',
+        '-isystem', '/home/luca/workdir/e3sm/e3sm-src/master/externals/kokkos/algorithms/src/',
+        '-isystem', '/home/luca/workdir/e3sm/e3sm-src/master/externals/kokkos/containers/src/',
+        '-isystem', '/home/luca/workdir/e3sm/e3sm-build/homme/gcc/debug/branch-pack-8/kokkos/build/',
 ]
 
 SCREAM_EKAT_FLAGS = [
@@ -48,15 +57,17 @@ SCREAM_EKAT_FLAGS = [
         '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/ekat/extern/kokkos/core/src/OpenMP',
         '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/ekat/extern/kokkos/core/src/Serial',
         '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/ekat/extern/kokkos/algorithms/src',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/ekat/extern/kokkos/containers/src/',
 ]
 
 EKAT_FLAGS = [
         '-DEKAT_TEST_DOUBLE_PRECISION',
-        '-I/home/luca/workdir/libs/ekat/ekat-build/gcc/debug/branch/',
+        '-I/home/luca/workdir/libs/ekat/ekat-build/gcc/debug/branch/src',
         '-I/home/luca/workdir/libs/ekat/ekat-build/gcc/debug/branch/tests',
         '-I/home/luca/workdir/libs/ekat/ekat-src/branch/src/',
         '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/catch2/include/',
         '-isystem','/home/luca/workdir/libs/ekat/ekat-build/gcc/debug/branch/externals/kokkos',
+        '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/kokkos/algorithms/src',
         '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/kokkos/containers/src',
         '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/kokkos/core/src',
         '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/kokkos/core/src/Cuda/',
@@ -80,7 +91,7 @@ SCREAM_FLAGS = [
         '-I/home/luca/workdir/scream/scream-src/branch/components/scream/extern/catch2/include',
         '-I/home/luca/workdir/scream/scream-build/gcc/debug/branch-dp/src',
         '-I/home/luca/workdir/scream/scream-build/gcc/debug/branch-dp/src/dynamics/homme/homme/src/share/cxx',
-        '-I/home/luca/workdir/scream/scream-build/gcc/debug/branch-dp/tests/scream_homme_dyn_ut_nlev72_qsize4',
+        '-I/home/luca/workdir/scream/scream-build/gcc/debug/branch-dp/tests/scream_homme',
         '-I/home/luca/workdir/scream/scream-src/branch/components/homme/src/share/cxx',
         '-I/home/luca/workdir/scream/scream-src/branch/components/homme/src/share/cxx/mpi',
         '-I/home/luca/workdir/scream/scream-src/branch/components/homme/src/share/cxx/utilities',
@@ -141,6 +152,7 @@ ALBANY_FLAGS = [
         '-I/home/luca/workdir/albany/albany-src/branch/src/adapt',
         '-I/home/luca/workdir/albany/albany-src/branch/src/LandIce',
         '-I/home/luca/workdir/albany/albany-src/branch/src/LandIce/evaluators',
+        '-I/home/luca/workdir/albany/albany-src/branch/src/LandIce/evaluators/hydrology',
         '-I/home/luca/workdir/albany/albany-src/branch/src/LandIce/problems',
         '-I/home/luca/workdir/albany/albany-src/branch/src/LandIce/interface_with_cism',
         '-I/home/luca/workdir/albany/albany-src/branch/src/LandIce/interface_with_mpas',
@@ -310,19 +322,8 @@ TRILINOS_INCLUDE_FLAGS = [
         '-isystem', '/home/luca/workdir/trilinos/trilinos-install/marzemino/gcc/debug/develop-serial/include/stk_unit_test_utils',
         '-isystem', '/home/luca/workdir/trilinos/trilinos-install/marzemino/gcc/debug/develop-serial/include/stk_utils',
         '-isystem', '/home/luca/workdir/trilinos/trilinos-install/marzemino/gcc/debug/develop-serial/include/Threads',
-]
-
-KOKKOS_INCLUDE_FLAGS = [
-        '-isystem', '/home/luca/workdir/kokkos/kokkos-install/marzemino/gcc/debug/include',
-        '-isystem', '/home/luca/workdir/kokkos/kokkos-install/marzemino/gcc/debug/include/Cuda',
-        '-isystem', '/home/luca/workdir/kokkos/kokkos-install/marzemino/gcc/debug/include/eti',
-        '-isystem', '/home/luca/workdir/kokkos/kokkos-install/marzemino/gcc/debug/include/impl',
-        '-isystem', '/home/luca/workdir/kokkos/kokkos-install/marzemino/gcc/debug/include/OpenMP',
-        '-isystem', '/home/luca/workdir/kokkos/kokkos-install/marzemino/gcc/debug/include/OpenMPTarget',
-        '-isystem', '/home/luca/workdir/kokkos/kokkos-install/marzemino/gcc/debug/include/Qthreads',
-        '-isystem', '/home/luca/workdir/kokkos/kokkos-install/marzemino/gcc/debug/include/ROCm',
-        '-isystem', '/home/luca/workdir/kokkos/kokkos-install/marzemino/gcc/debug/include/Serial',
-        '-isystem', '/home/luca/workdir/kokkos/kokkos-install/marzemino/gcc/debug/include/Threads',
+        '-isystem', '/home/luca/workdir/libs/netcdf/netcdf-c/netcdf-c-install/include/',
+        '-isystem', '/home/luca/workdir/libs/netcdf/pnetcdf/pnetcdf-install/include/',
 ]
 
 def in_directory(file, directory, allow_symlink = False):
@@ -338,7 +339,8 @@ def in_directory(file, directory, allow_symlink = False):
     #e.g. /a/b/c/d.rst and directory is /a/b, the common prefix is /a/b
     return os.path.commonprefix([file, directory]) == directory
 
-def FlagsForFile(filename, **kwargs):
+def Settings(**kwargs):
+    filename = kwargs[ 'filename' ]
     final_flags = []
     is_ekat = in_directory(filename,'/home/luca/workdir/libs/ekat/ekat-src')
     if is_ekat :
@@ -348,10 +350,7 @@ def FlagsForFile(filename, **kwargs):
       final_flags = final_flags + SCREAM_FLAGS + SCREAM_EKAT_FLAGS
     is_e3sm = in_directory(filename,'/home/luca/workdir/e3sm/e3sm-src')
     if is_e3sm :
-      final_flags = final_flags + E3SM_FLAGS + KOKKOS_INCLUDE_FLAGS
-    is_homme = in_directory(filename,'/home/luca/workdir/hommexx/hommexx-src')
-    if is_homme :
-      final_flags = final_flags + HOMME_FLAGS + KOKKOS_INCLUDE_FLAGS
+      final_flags = final_flags + E3SM_FLAGS
     is_kokkos = in_directory(filename,'/home/luca/workdir/kokkos/kokkos-src')
     if is_kokkos :
       final_flags = final_flags + KOKKOS_FLAGS
