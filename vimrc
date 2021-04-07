@@ -13,7 +13,7 @@ filetype plugin on
 
 " YouCompleteMe options
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_clangd_binary_path = '~/workdir/libs/llvm/llvm-10.0.0-install'
+let g:ycm_always_populate_location_list = 1 " allows jumping to error locations
 
 " yankring options
 let g:yankring_history_dir = '~/.vim/temp'
@@ -43,6 +43,9 @@ set ls=2
 
 " Highlight current window
 hi StatusLine gui=bold ctermfg=Blue
+
+" Highlight errors by underlining
+hi SpellBad cterm=underline ctermfg=red ctermbg=NONE
 
 " Customize status line
 set statusline=%<%f\ %h%w%m%r%y%=Row:%l/%L\ (%p%%)\ Col:%c%V
@@ -129,6 +132,7 @@ endif
 let g:netrw_list_hide= '.*\.swp$,^\./$'
 let g:netrw_hide=1
 let g:netrw_keepdir=0
+let g:netrw_liststyle=0
 
 " Backup files location
 set backup                    " keep a backup file
@@ -173,6 +177,11 @@ nnoremap <C-a> GVgg
 nnoremap <C-o> :tabedit . <Enter>
 nnoremap <C-z> u
 nnoremap <C-t> :tabnew <Enter>
+nnoremap ll :ll <Enter>
+nnoremap nn :lnext <Enter>
+nnoremap pp :lprevious <Enter>
+" Apply YCM FixIt
+nnoremap <F9> :YcmCompleter FixIt<CR>
 
 " Visual mode
 vnoremap qq <Esc>
