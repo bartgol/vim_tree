@@ -97,6 +97,14 @@ SCREAM_FLAGS = [
         '-I/home/luca/workdir/scream/scream-src/branch/components/homme/src/share/cxx/utilities',
         '-I/home/luca/workdir/scream/scream-src/branch/components/homme/src/share/cxx/vector',
         '-I/home/luca/workdir/scream/scream-src/branch/components/homme/src/theta-l_kokkos/cxx',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/components/eam/src/physics/rrtmgp/external/',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/components/eam/src/physics/rrtmgp/external/cpp/rrtmgp',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/components/eam/src/physics/rrtmgp/external/cpp/rrtmgp/kernels/',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/components/eam/src/physics/rrtmgp/external/cpp/rte/',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/components/eam/src/physics/rrtmgp/external/cpp/rte/kernels',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/components/eam/src/physics/rrtmgp/external/cpp/',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/YAKL',
 ]
 
 HOMME_FLAGS = [
