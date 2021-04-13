@@ -193,5 +193,5 @@ vnoremap gt   :YcmCompleter GetType <Enter>
 vnoremap fix  :YcmCompleter FixIt <Enter>
 
 " Insert mode
-inoremap qq <Esc>
+inoremap QQ <Esc>
 " :inoremap <expr> <CR> pumvisible() ? "\<C-y><space>" : "\<C-g>u\<CR>"
