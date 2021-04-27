@@ -104,6 +104,8 @@ SCREAM_FLAGS = [
         '-isystem','/home/luca/workdir/scream/scream-src/branch/components/eam/src/physics/rrtmgp/external/cpp/rte/kernels',
         '-isystem','/home/luca/workdir/scream/scream-src/branch/components/eam/src/physics/rrtmgp/external/cpp/',
         '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/scorpio/src/clib/',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/scorpio/src/gptl',
         '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/YAKL',
 ]
 
