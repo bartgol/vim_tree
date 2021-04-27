@@ -178,8 +178,8 @@ nnoremap <C-o> :tabedit . <Enter>
 nnoremap <C-z> u
 nnoremap <C-t> :tabnew <Enter>
 nnoremap ll :ll <Enter>
-nnoremap nn :lnext <Enter>
-nnoremap pp :lprevious <Enter>
+nnoremap ln :lnext <Enter>
+nnoremap lp :lprevious <Enter>
 " Apply YCM FixIt
 nnoremap <F9> :YcmCompleter FixIt<CR>
 
