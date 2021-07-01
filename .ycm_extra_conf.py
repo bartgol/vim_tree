@@ -58,6 +58,7 @@ SCREAM_EKAT_FLAGS = [
         '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/ekat/extern/kokkos/core/src/Serial',
         '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/ekat/extern/kokkos/algorithms/src',
         '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/ekat/extern/kokkos/containers/src/',
+        '-isystem','/home/luca/workdir/scream/scream-src/branch/externals/ekat/extern/spdlog/include/',
 ]
 
 EKAT_FLAGS = [
@@ -75,6 +76,7 @@ EKAT_FLAGS = [
         '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/kokkos/core/src/Serial/',
         '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/yaml-cpp/src/',
         '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/yaml-cpp/src/contrib',
+        '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/spdlog/include',
 ]
 
 SCREAM_FLAGS = [
@@ -85,6 +87,7 @@ SCREAM_FLAGS = [
         '-I/home/luca/workdir/scream/scream-src/branch/components/scream/src/control/',
         '-I/home/luca/workdir/scream/scream-src/branch/components/scream/src/share/',
         '-I/home/luca/workdir/scream/scream-src/branch/components/scream/src/share/field',
+        '-I/home/luca/workdir/scream/scream-src/branch/components/scream/src/share/util/',
         '-I/home/luca/workdir/scream/scream-src/branch/components/scream/src/physics/p3/',
         '-I/home/luca/workdir/scream/scream-src/branch/components/scream/src/physics/rrtmgp/',
         '-I/home/luca/workdir/scream/scream-src/branch/components/scream/src/physics/shoc/',
