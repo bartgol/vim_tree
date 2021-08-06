@@ -38,6 +38,9 @@ syntax on
 " Show relative line number
 set relativenumber
 
+" Turn off the bell
+set visualbell
+
 " Always display file name
 set ls=2
 
