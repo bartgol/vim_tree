@@ -102,6 +102,9 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 " Search highlight
 set hlsearch
 
+" No visual bell
+set t_vb=
+
 " Incremental search
 set incsearch
 
