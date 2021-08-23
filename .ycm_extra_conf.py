@@ -94,7 +94,7 @@ SCREAM_FLAGS = [
         '-I/home/luca/workdir/scream/scream-src/branch/components/scream/extern/catch2/include',
         '-I/home/luca/workdir/scream/scream-build/gcc/debug/branch-dp/src',
         '-I/home/luca/workdir/scream/scream-build/gcc/debug/branch-dp/src/dynamics/homme/homme/src/share/cxx',
-        '-I/home/luca/workdir/scream/scream-build/gcc/debug/branch-dp/tests/scream_homme',
+        '-I/home/luca/workdir/scream/scream-build/gcc/debug/branch-dp/tests/uncoupled/homme',
         '-I/home/luca/workdir/scream/scream-src/branch/components/homme/src/share/cxx',
         '-I/home/luca/workdir/scream/scream-src/branch/components/homme/src/share/cxx/mpi',
         '-I/home/luca/workdir/scream/scream-src/branch/components/homme/src/share/cxx/utilities',
