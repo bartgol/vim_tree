@@ -74,8 +74,7 @@ EKAT_FLAGS = [
         '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/kokkos/core/src/Cuda/',
         '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/kokkos/core/src/OpenMP/',
         '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/kokkos/core/src/Serial/',
-        '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/yaml-cpp/src/',
-        '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/yaml-cpp/src/contrib',
+        '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/yaml-cpp/include/',
         '-isystem','/home/luca/workdir/libs/ekat/ekat-src/branch/extern/spdlog/include',
 ]
 
