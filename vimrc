@@ -190,7 +190,7 @@ nnoremap ll :ll <Enter>
 nnoremap ln :lnext <Enter>
 nnoremap lp :lprevious <Enter>
 " Apply YCM FixIt
-nnoremap <F9> :YcmCompleter FixIt<CR>
+nnoremap FF :YcmCompleter FixIt<CR>
 
 " Visual mode
 vnoremap qq <Esc>
