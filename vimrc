@@ -21,6 +21,9 @@ let g:yankring_history_dir = '~/.vim/temp'
 " nerdcommented options
 let g:NERDSpaceDelims = 1
 
+" Taboo options
+let g:taboo_tabline = 0
+
 " make backspace and del keys work like most other apps
 set backspace=2
 :fixdel
