@@ -12,7 +12,7 @@ filetype off                  " required
 filetype plugin on
 
 " YouCompleteMe options
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1 " allows jumping to error locations
 
 " yankring options
