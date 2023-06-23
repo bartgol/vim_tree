@@ -1,0 +1,1 @@
+/home/lbertag/workdir/utils/cmake/cmake-install/share/vim/vimfiles/syntax/cmake.vim

@@ -176,7 +176,7 @@ set completeopt-=preview
 " Remap some commands
 
 " Normal mode
-nnoremap ww :w<Enter>
+nnoremap ss :w<Enter>
 nnoremap qa :qa<Enter>
 nnoremap rr R
 nnoremap wa :wa<Enter>
@@ -186,9 +186,11 @@ nnoremap <C-a> GVgg
 nnoremap <C-o> :tabedit . <Enter>
 nnoremap <C-z> u
 nnoremap <C-t> :tabnew <Enter>
-nnoremap ll :ll <Enter>
+nnoremap TT :tabprevious <Enter>
+nnoremap tt :tabnext <Enter>
 nnoremap ln :lnext <Enter>
 nnoremap lp :lprevious <Enter>
+nnoremap E  $
 " Apply YCM FixIt
 nnoremap FF :YcmCompleter FixIt<CR>
 
@@ -203,4 +205,6 @@ vnoremap fix  :YcmCompleter FixIt <Enter>
 
 " Insert mode
 inoremap QQ <Esc>
+inoremap <C-l> <Del>
+inoremap <C-h> <BS>
 " :inoremap <expr> <CR> pumvisible() ? "\<C-y><space>" : "\<C-g>u\<CR>"
