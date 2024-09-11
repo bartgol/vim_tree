@@ -1,28 +1,38 @@
-set nocompatible
-filetype plugin indent on
-syntax on
+" Rely on vim-plug for plugins
+call plug#begin()
 
-" Let pathogen handles plugins
-execute pathogen#infect()
+" Common vim options
+" Plug 'tpope/vim-sensible'
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Rainbow parentheses
+Plug 'frazrepo/vim-rainbow'
+au FileType c,cpp call rainbow#load()
+let g:rainbow_active=1
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<', '>']] ],
+    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ ]
 
-" To ignore plugin indent changes, instead use:
-filetype plugin on
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
-" YouCompleteMe options
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+" YouCompleteMe
+" Plug 'Valloric/YouCompleteMe'
+
+" let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1 " allows jumping to error locations
 
 " yankring options
+Plug 'vim-scripts/yankring.vim'
 let g:yankring_history_dir = '~/.vim/temp'
 
-" nerdcommented options
+" nerdcommented
+Plug 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims = 1
 
-" Taboo options
-let g:taboo_tabline = 0
+call plug#end()
 
 " make backspace and del keys work like most other apps
 set backspace=2
@@ -35,6 +45,9 @@ set t_Co=256
 set background=light
 highlight Normal ctermbg=256 ctermfg=46
 
+" Turn on filetype detection, filetype-specifi plugins/indentation
+filetype plugin indent on
+
 " Turn on syntax highlight
 syntax on
 
@@ -43,6 +56,9 @@ set relativenumber
 
 " Turn off the bell
 set visualbell
+
+" Add <> to parens match highlight
+:set matchpairs+=<:>
 
 " Always display file name
 set ls=2
@@ -161,9 +177,6 @@ hi TabLineSel ctermfg=White ctermbg=Blue term=bold cterm=bold
 " Set the default color scheme
 colorscheme elflord
 
-" Activate rainbow highlight for c++ delimiters
-" let g:rainbow_active=1
-
 " Do not wrap text (i.e., break line if past textwidth)
 set fo-=t
 
@@ -193,6 +206,8 @@ nnoremap lp :lprevious <Enter>
 nnoremap E  $
 " Apply YCM FixIt
 nnoremap FF :YcmCompleter FixIt<CR>
+nnoremap NRN :set norelativenumber <Enter>
+nnoremap RN :set relativenumber <Enter>
 
 " Visual mode
 vnoremap qq <Esc>
