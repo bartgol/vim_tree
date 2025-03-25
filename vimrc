@@ -1,18 +1,28 @@
-set nocompatible
-filetype plugin indent on
-syntax on
+" Handle plugins with Plug
+call plug#begin('~/.vim/plugged')  " Start the plugin section
 
-" Let pathogen handles plugins
-execute pathogen#infect()
+Plug 'lervag/vimtex'                      " Vim-LaTeX
+Plug 'notmuch/notmuch'                    " Notmuch email client
+Plug 'octol/vim-cpp-enhanced-highlight'   " C++ enhanced syntax highlighting
+Plug 'sheerun/vim-polyglot'               " Language packs for Vim
+Plug 'scrooloose/nerdcommenter'           " NERD Commenter
+Plug 'tpope/vim-sensible'                 " Vim-Sensible
+Plug 'ycm-core/YouCompleteMe'             " YouCompleteMe
+Plug 'wellle/context.vim'                 " Context
+
+call plug#end()  " End the plugin section
+
+syntax on          " Enable syntax highlighting
+filetype plugin indent on " Enable filetype detection and plugins
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" To ignore plugin indent changes, instead use:
-filetype plugin on
+" Always use system clipboard (requires +clipboard in vim --version)
+set clipboard=unnamedplus
 
 " YouCompleteMe options
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1 " allows jumping to error locations
 
 " yankring options
@@ -191,6 +201,9 @@ nnoremap ln :lnext <Enter>
 nnoremap lp :lprevious <Enter>
 " Apply YCM FixIt
 nnoremap FF :YcmCompleter FixIt<CR>
+nnoremap NRN :set norelativenumber <Enter>
+nnoremap RN :set relativenumber <Enter>
+
 
 " Visual mode
 vnoremap qq <Esc>
@@ -204,3 +217,10 @@ vnoremap fix  :YcmCompleter FixIt <Enter>
 " Insert mode
 inoremap QQ <Esc>
 " :inoremap <expr> <CR> pumvisible() ? "\<C-y><space>" : "\<C-g>u\<CR>"
+
+" For TEX files only
+augroup latex_mappings
+    autocmd!
+    autocmd FileType tex imap <buffer> <C-I> \begin{itemize}<CR>\item <CR>\end{itemize}<Esc> k A
+    autocmd FileType tex imap <buffer> <C-F> \begin{frame}{title}<CR>\end{frame}<Esc> k A
+augroup END
