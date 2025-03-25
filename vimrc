@@ -1,17 +1,31 @@
-" Rely on vim-plug for plugins
-call plug#begin()
+" Handle plugins with Plug
+call plug#begin('~/.vim/plugged')  " Start the plugin section
 
-" Common vim options
-" Plug 'tpope/vim-sensible'
+Plug 'lervag/vimtex'                      " Vim-LaTeX
+Plug 'notmuch/notmuch'                    " Notmuch email client
+Plug 'octol/vim-cpp-enhanced-highlight'   " C++ enhanced syntax highlighting
+Plug 'sheerun/vim-polyglot'               " Language packs for Vim
+Plug 'scrooloose/nerdcommenter'           " NERD Commenter
+Plug 'tpope/vim-sensible'                 " Vim-Sensible
+Plug 'ycm-core/YouCompleteMe'             " YouCompleteMe
+Plug 'wellle/context.vim'                 " Context
+
+call plug#end()  " End the plugin section
+
+syntax on          " Enable syntax highlighting
+filetype plugin indent on " Enable filetype detection and plugins
 
 " Rainbow parentheses
 Plug 'frazrepo/vim-rainbow'
 " YouCompleteMe
 " Plug 'Valloric/YouCompleteMe'
 
+" Always use system clipboard (requires +clipboard in vim --version)
+set clipboard=unnamedplus
+
+" YouCompleteMe options
 " let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-" allows jumping to error locations
-" let g:ycm_always_populate_location_list = 1
+let g:ycm_always_populate_location_list = 1 " allows jumping to error locations
 
 " yankring options
 Plug 'vim-scripts/yankring.vim'
@@ -226,3 +240,10 @@ inoremap QQ <Esc>
 inoremap <C-l> <Del>
 inoremap <C-h> <BS>
 " :inoremap <expr> <CR> pumvisible() ? "\<C-y><space>" : "\<C-g>u\<CR>"
+
+" For TEX files only
+augroup latex_mappings
+    autocmd!
+    autocmd FileType tex imap <buffer> <C-I> \begin{itemize}<CR>\item <CR>\end{itemize}<Esc> k A
+    autocmd FileType tex imap <buffer> <C-F> \begin{frame}{title}<CR>\end{frame}<Esc> k A
+augroup END
