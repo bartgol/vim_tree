@@ -6,23 +6,12 @@ call plug#begin()
 
 " Rainbow parentheses
 Plug 'frazrepo/vim-rainbow'
-au FileType c,cpp call rainbow#load()
-let g:rainbow_active=1
-let g:rainbow_load_separately = [
-    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
-    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<', '>']] ],
-    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
-    \ ]
-
-let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
-let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
-
 " YouCompleteMe
 " Plug 'Valloric/YouCompleteMe'
 
 " let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-let g:ycm_always_populate_location_list = 1 " allows jumping to error locations
+" allows jumping to error locations
+" let g:ycm_always_populate_location_list = 1
 
 " yankring options
 Plug 'vim-scripts/yankring.vim'
@@ -34,6 +23,23 @@ let g:NERDSpaceDelims = 1
 
 call plug#end()
 
+" Turn on filetype detection, filetype-specifi plugins/indentation
+filetype plugin indent on
+
+" Enable rainbow parens only for c/c++/Fortran files
+au FileType c,cpp,fortran call rainbow#load()
+" let g:rainbow_active=1
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<', '>']] ],
+    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ ]
+
+" let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+" let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
+
 " make backspace and del keys work like most other apps
 set backspace=2
 :fixdel
@@ -44,9 +50,6 @@ set t_Co=256
 " Set background
 set background=light
 highlight Normal ctermbg=256 ctermfg=46
-
-" Turn on filetype detection, filetype-specifi plugins/indentation
-filetype plugin indent on
 
 " Turn on syntax highlight
 syntax on
