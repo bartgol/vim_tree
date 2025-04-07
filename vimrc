@@ -8,7 +8,7 @@ Plug 'sheerun/vim-polyglot'               " Language packs for Vim
 Plug 'scrooloose/nerdcommenter'           " NERD Commenter
 Plug 'tpope/vim-sensible'                 " Vim-Sensible
 Plug 'ycm-core/YouCompleteMe'             " YouCompleteMe
-Plug 'wellle/context.vim'                 " Context
+" Plug 'wellle/context.vim'                 " Context
 
 call plug#end()  " End the plugin section
 
