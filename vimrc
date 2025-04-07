@@ -247,3 +247,10 @@ augroup latex_mappings
     autocmd FileType tex imap <buffer> <C-I> \begin{itemize}<CR>\item <CR>\end{itemize}<Esc> k A
     autocmd FileType tex imap <buffer> <C-F> \begin{frame}{title}<CR>\end{frame}<Esc> k A
 augroup END
+
+" Fix issues in vim, printing random char [>4;m at the beginning
+let &t_TI = ""
+let &t_TE = ""
+
+set keyprotocol=
+let &term=&term
